@@ -11,9 +11,9 @@ public class A
     public static final int finalInt = (int)(Math.random()*100);
     public static B p =  new B("A");
     public static final String finalStr = "finalStr";
-    public static final Integer finalInteger = new Integer(10);
+    public static final Integer finalInteger = 10;
     public static int a = 1;
-    public static B c = null;
+
     public A(String from)
     {
         System.out.println("----------- begin A::A ----------------");
