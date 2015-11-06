@@ -1,7 +1,5 @@
 package com.shelvin.java.concurrent;
 
-import org.w3c.dom.events.MutationEvent;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
