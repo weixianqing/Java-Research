@@ -23,12 +23,12 @@ public class PublishingVehicleTracker
         return unmodifiableMap;
     }
 
-    public SafePoint getLocations(String id)
+    public SafePoint getLocation(String id)
     {
         return locations.get(id);
     }
 
-    public void setLocations(String id, int x, int y)
+    public void setLocation(String id, int x, int y)
     {
         if (!locations.containsKey(id))
         {

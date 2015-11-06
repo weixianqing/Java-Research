@@ -24,12 +24,12 @@ public class DelegatingVehicleTracker
         return unmodifiableMap;
     }
 
-    public Point getLocations(String id)
+    public Point getLocation(String id)
     {
         return locations.get(id);
     }
 
-    public void setLocations(String id,int x,int y)
+    public void setLocation(String id,int x,int y)
     {
         if (locations.replace(id,new Point(x,y)) ==null)
         {
