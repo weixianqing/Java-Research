@@ -111,7 +111,7 @@ public class AddTwoNumbersSolution
              * 所以这种写法,第一遍写代码基本不可能写对,而且这个bug要debug很久才会发现.
              */
 
-            index.val = sum % 10;
+            index.val += sum % 10;
 
             //非常容易写错的一句,容易写为carry = sum / 10;
             carry = (sum /= 10);
