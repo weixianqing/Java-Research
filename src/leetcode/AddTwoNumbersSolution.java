@@ -109,20 +109,28 @@ public class AddTwoNumbersSolution
              * 第一次计算的sum = 10在第一次while循环时就编程了1,所以第二次while循环,carry=1 /10 =0
              * 程序推出while循环,
              * 所以这种写法,第一遍写代码基本不可能写对,而且这个bug要debug很久才会发现.
+             *
+             *
+             *
+             * carry = (sum /= 10)这种写法,sum里边带了进位信息
              */
 
-            index.val += sum % 10;
+            index.val = sum % 10;
 
             //非常容易写错的一句,容易写为carry = sum / 10;
+            //这种写法,sum里边带了进位信息,上边两个if语句计算sum时,会把进位的sum也计算进去
             carry = (sum /= 10);
 
             //写成
             // carry = sum / 10;
             //sum = 0;
             //更容易理解
+            //但是这种写法,逻辑上不对,因为没有把进位加到下一个值上.
+            //在这种写法下,index.val = sum % 10;要改写为index.val += sum % 10;
 
             if (carry > 0 || l1 != null || l2 != null)
             {
+                //用carry初始化index没有用,因为index.val = sum % 10;把index.next又给覆盖了
                 index.next = new ListNode(carry);
                 index = index.next;
             }else
