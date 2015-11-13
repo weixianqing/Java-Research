@@ -32,4 +32,11 @@ public class FindMedianSolution
 
         return median;
     }
+
+    //利用归并排序的思想，在归并两个数组的同时，记录归并了的数据的个数，
+    //找到中间的一个或两个（已知两个数组的大小，可以确定中位数的索引）
+
+
+    //第k小数
+    //http://blog.csdn.net/yutianzuijin/article/details/11499917/
 }
