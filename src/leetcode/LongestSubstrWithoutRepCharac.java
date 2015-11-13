@@ -1,6 +1,7 @@
 package leetcode;
 
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by shelvin on 2015/11/9 21:03.
@@ -11,41 +12,40 @@ public class LongestSubstrWithoutRepCharac
     public static void main(String[] args)
     {
         LongestSubstrWithoutRepCharac lswrc = new LongestSubstrWithoutRepCharac();
-        String s = "dvdf";
+        String s = "abcabcab";
         int res = lswrc.lengthOfLongestSubstring(s);
         System.out.println(res);
     }
 
     public int lengthOfLongestSubstring(String s)
     {
-        int maxLen = 0;
+        int maxLength = 0 ;
+        int i = 0;
+        int j = 0;
         int count = 0;
-        char[] ch = s.toCharArray();
+        char[] ss = s.toCharArray();
+        Map<Character,Integer> flagMap = new HashMap<Character, Integer>();
 
-        HashSet hs = new HashSet();
-        for (int i = 0; i < ch.length; i++)
+        while (j < ss.length)
         {
-            if (!hs.contains(ch[i]))
+            if (!flagMap.containsKey(ss[j]))
             {
-                hs.add(ch[i]);
-                count++;
+                flagMap.put(ss[j],j);
+                count = j-i+1;
+                maxLength = Math.max(count,maxLength);
+                j++;
             }else
             {
-                if (count > maxLen)
+                if (count > maxLength)
                 {
-                    maxLen = count;
+                    maxLength = count;
+                    count = 0;
                 }
-                count = 0;
-                hs.clear();
-                hs.add(ch[i]);
-                count++;
+                j = i = flagMap.get(ss[j])+1;
+                flagMap.clear();
             }
         }
 
-        if (count > maxLen)
-        {
-            maxLen = count;
-        }
-        return maxLen;
+        return maxLength;
     }
 }
