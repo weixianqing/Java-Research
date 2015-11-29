@@ -5,7 +5,11 @@ package com.shelvin.java.initial;
  */
 public class TestVar
 {
-    public static int k = 0;
+    public static int k = 2;
+    static
+    {
+        print("静态");
+    }
     public static TestVar t1 = new TestVar("t1");
     public static TestVar t2 = new TestVar("t2");
     public static int i = print("i");
@@ -14,11 +18,6 @@ public class TestVar
 
     {
         print("构造");
-    }
-
-    static
-    {
-        print("静态");
     }
 
     public TestVar(String str)
