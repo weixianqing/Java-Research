@@ -1,4 +1,4 @@
-package com.shelvin.java.pattern.observe;
+package com.shelvin.test;
 
 import java.util.*;
 
