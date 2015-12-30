@@ -9,43 +9,49 @@ public class LongestPalindromicSubstring
     public static void main(String[] args)
     {
         LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-        String s = "abccba";
-        String result = lps.longestPalindrome(s);
+        String s = "aoabcbaob";
+        String result = lps.longestPalindromeDP(s);
         System.out.println(result);
     }
 
-    public String longestPalindrome(String s)
+    public String longestPalindromeDP(String s)
     {
-        String result = "";
-        String temp = "";
-
-        int i,j;
-        int N = s.length();
-        char[] chars = s.toCharArray();
-        //System.out.println(N);
-        for (int k = 1; k <= 2*N-1; k++)
+        int strLen = s.length();
+        int longestBegin = 0;
+        int maxLen = 0;
+        char[] strChar;
+        strChar = s.toCharArray();
+        boolean[][] palindromeFlag = new boolean[strLen][strLen];
+        for (int i = 0; i < strLen; i++)
         {
-            i = k;
-            j = k+1;
-
-            while (i >= 1 && j <=2*N-1 && chars[i] == chars[j])
-            {
-                i--;
-                j++;
-            }
-
-            for (int l = k+1; l < j; l++)
-            {
-                temp = temp+chars[l];
-            }
-
-            if (temp.length() > result.length())
-            {
-                result = temp;
-            }
-            temp = "";
+            palindromeFlag[i][i] = true;
         }
 
-        return result;
+        for (int i = 0; i < strLen - 1; i++)
+        {
+            if (strChar[i] == strChar[i+1])
+            {
+                palindromeFlag[i][i+1] = true;
+                maxLen = 2;
+                longestBegin = i;
+            }
+        }
+
+        for (int len = 3; len <= strLen; len++)
+        {
+            for (int i = 0; i < strLen - len + 1; i++)
+            {
+                int j = i+len-1;
+                if (strChar[i] == strChar[j] && palindromeFlag[i+1][j-1])
+                {
+                    palindromeFlag[i][j] = true;
+                    maxLen = len;
+                    longestBegin = i;
+                }
+            }
+        }
+        
+        return s.substring(longestBegin,maxLen);
     }
 }
+
