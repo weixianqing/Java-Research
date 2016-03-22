@@ -1,4 +1,7 @@
 package leetcode;
+
+import com.shelvin.test.Widget;
+
 /**
  * Created by shelvin on 11/19/15 23:21.
  */
@@ -8,7 +11,7 @@ public class LongestPalindromicSubstring
     public static void main(String[] args)
     {
         LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-        String s = "aoab";
+        String s = "abagjaba";
         String result = lps.longestPalindrome(s);
         System.out.println(result);
     }
@@ -28,9 +31,9 @@ public class LongestPalindromicSubstring
 
         for (int i = 0; i < strLen - 1; i++)
         {
-            if (strChar[i] == strChar[i+1])
+            if (strChar[i] == strChar[i + 1])
             {
-                palindromeFlag[i][i+1] = true;
+                palindromeFlag[i][i + 1] = true;
                 maxLen = 2;
                 longestBegin = i;
             }
@@ -40,8 +43,8 @@ public class LongestPalindromicSubstring
         {
             for (int i = 0; i < strLen - len + 1; i++)
             {
-                int j = i+len-1;
-                if (strChar[i] == strChar[j] && palindromeFlag[i+1][j-1])
+                int j = i + len - 1;
+                if (strChar[i] == strChar[j] && palindromeFlag[i + 1][j - 1])
                 {
                     palindromeFlag[i][j] = true;
                     maxLen = len;
@@ -49,8 +52,8 @@ public class LongestPalindromicSubstring
                 }
             }
         }
-        
-        return s.substring(longestBegin,maxLen);
+
+        return s.substring(longestBegin, maxLen);
     }
 
     public String longestPalindrome(String s)
@@ -62,41 +65,64 @@ public class LongestPalindromicSubstring
 
         for (int i = 0; i < strLen; i++)
         {
-            flag[i][i] = true;
-        }
-
-        for (int i = 0; i < strLen-1; i++)
-        {
-            if (input[i] == input[i+1])
+            for (int j = 0; j < strLen; j++)
             {
-                flag[i][i+1] = true;
-            }
-            else
-            {
-                flag[i][i+1] = false;
+                flag[i][j] = false;
             }
         }
 
         for (int i = 0; i < strLen; i++)
         {
-            int j = 2;
-            while ((j < strLen) && input[i] == input[j] && flag[i + 1][j - 1])
-            {
-                flag[i][j] = true;
-                j++;
-            }
+            flag[i][i] = true;
+        }
 
-            flag[i][j] = false;
-            if ((j-i-2) > res.length())
+        for (int i = 0; i < strLen - 1; i++)
+        {
+            if (input[i] == input[i + 1])
             {
-                for (int k = i + 1; k < j - i - 2; k++)
+                flag[i][i + 1] = true;
+            } else
+            {
+                flag[i][i + 1] = false;
+            }
+        }
+
+        for (int i = 0; i < strLen - 2; i++)
+        {
+            for (int j = i + 2; j < strLen; j++)
+            {
+                if (this.isPalindromic(input,flag,i,j))
                 {
-                    res += input[k];
+                    if (res.length() < j - i + 1)
+                    {
+                        res = "";
+                        for (int k = i; k < j - i + 1; k++)
+                        {
+                            res += input[k];
+                        }
+                    }
                 }
             }
         }
 
         return res;
+    }
+
+    public boolean isPalindromic(char[] input, boolean[][] flag, int begin, int end)
+    {
+        if (begin == end)
+        {
+            return flag[begin][begin];
+        } else
+        {
+            if ((end - begin) == 1)
+            {
+                return flag[begin][end];
+            } else
+            {
+                return flag[begin][end] = (input[begin] == input[end] && isPalindromic(input, flag, begin + 1, end - 1));
+            }
+        }
     }
 }
 
