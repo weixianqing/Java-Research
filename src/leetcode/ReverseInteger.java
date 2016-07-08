@@ -5,49 +5,25 @@ package leetcode;
  */
 public class ReverseInteger
 {
-    /*
-    without consider integer overflow
-     */
-    public int reverse(int input)
+    public int reverse(int x)
     {
-        int sum = 0;
-        while (input != 0)
+        int temp = 0;
+        if (x >= Integer.MAX_VALUE && x <= Integer.MIN_VALUE)
         {
-            int temp = input % 10;
-            sum = sum*10+temp;
-            input /= 10;
+            return 0;
         }
-
-        return sum;
-    }
-
-    public int reverseWithuotOverflow()
-    {
-        int result = 0;
-
-
-
-        return result;
-    }
-
-    /*
-    Test mod function
-    Modding of negative's process.
-     */
-    public static int negMod(int input)
-    {
-        int result = 0;
-        result = input % (-3);
-        return result;
+        while (x != 0)
+        {
+            temp = temp*10+x%10;
+            x /= 10;
+        }
+        return temp;
     }
 
     public static void main(String[] args)
     {
         ReverseInteger ri = new ReverseInteger();
-        int sum = ri.reverse(-1233);
-        System.out.println(sum);
-
-        int result = negMod(8);
+        int result = ri.reverse(-987654321);
         System.out.println(result);
     }
 }
