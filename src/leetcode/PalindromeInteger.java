@@ -7,7 +7,7 @@ public class PalindromeInteger
 {
     public static void main(String[] args)
     {
-        int test = 1;
+        int test = 10101;
         System.out.println(isPalindrome(test));
     }
 
