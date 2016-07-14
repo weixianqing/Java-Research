@@ -3,7 +3,7 @@ package leetcode;
 /**
  * Created by shelvin on 9/7/16.
  */
-public class PalindromeInteger
+public class PalindromeInteger_9
 {
     public static void main(String[] args)
     {

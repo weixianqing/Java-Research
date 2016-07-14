@@ -4,7 +4,7 @@ package leetcode;
 /**
  * Created by shelvin on 2/6/16.
  */
-public class StringToInteger
+public class StringToInteger_8
 {
     public static void main(String[] args)
     {
