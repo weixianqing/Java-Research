@@ -65,7 +65,7 @@ public class StringToInteger
         //do not use int to store a integer that maybe bigger than integer's MAX_VALUE
         double res = 0;
         int index = 0;
-        boolean sign = false;
+        boolean sign = true;
         if (temp.charAt(0) == '+')
         {
             index = 1;
@@ -81,18 +81,17 @@ public class StringToInteger
             {
                 break;
             }
-
             if (sign)
             {
-                res = res*10+(temp.charAt(index) - '0');
+                res=res*10+(temp.charAt(index)-'0');
                 if (res>Integer.MAX_VALUE)
                 {
                     return 0;
                 }
             }else
             {
-                res = - (res*10+(temp.charAt(index)-'0'));
-                if (res< Integer.MIN_VALUE)
+                res=res*10-(temp.charAt(index)-'0');
+                if (res<Integer.MIN_VALUE)
                 {
                     return 0;
                 }
