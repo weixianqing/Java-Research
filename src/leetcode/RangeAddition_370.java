@@ -39,7 +39,7 @@ public class RangeAddition_370
         return res;
     }
 
-    //beautiful method, a little hard to understand,this thinking mind is important.
+    //beautiful method, a little hard to understand,this thinking mind is important
     public static int[] getModifiedArrayOptm(int length,int[][] updates)
     {
         int[] res = new int[length];
