@@ -38,4 +38,36 @@ public class RangeAddition_370
 
         return res;
     }
+
+    //beautiful method, a little hard to understand,this thinking mind is important.
+    public static int[] getModifiedArrayOptm(int length,int[][] updates)
+    {
+        int[] res = new int[length];
+        for (int i = 0; i < length; i++)
+        {
+            res[i] = 0;
+        }
+
+        for (int i = 0; i < updates.length; i++)
+        {
+            int leftIndex = updates[i][0];
+            int rightIndex = updates[i][1];
+            int inc = updates[i][2];
+
+            res[leftIndex] += inc;
+            if (rightIndex < length-1)
+            {
+                res[rightIndex+1] -= inc;
+            }
+        }
+
+        int sum = 0;
+        for (int i = 0; i < length; i++)
+        {
+            sum += res[i];
+            res[i] = sum;
+        }
+
+        return res;
+    }
 }
