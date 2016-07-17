@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by zhousw on 2016/7/17.
  */
-public class PrintArrayListElement
+public class PrintListElement
 {
     public static void main(String[] args)
     {
