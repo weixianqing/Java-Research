@@ -26,7 +26,7 @@ public class FindMedianInDynamicInput
 
     public static void main(String[] args)
     {
-        maxHeap = new PriorityQueue<Integer>(20,comparator);
+        maxHeap = new PriorityQueue<Integer>(20, comparator);
         minHeap = new PriorityQueue<Integer>(20);
     }
 
@@ -39,15 +39,15 @@ public class FindMedianInDynamicInput
             //else中，要实现这个路由，最直接的方法就是让if失效，失效的最好方法就是
             //加条件让size都为0时，if不成立，由于minHeap有弹出操作 ，如果minHeap为null，
             //弹出肯定报错 ，所以限定条件就是minHeap要弹出的元素不为空，所以minHeap.peek() != null
-            if (minHeap.peek() != null &&value > minHeap.peek())
+            if (minHeap.peek() != null && value > minHeap.peek())
             {
                 maxHeap.offer(minHeap.poll());
                 minHeap.offer(value);
-            }else
+            } else
             {
                 maxHeap.offer(value);
             }
-        }else
+        } else
         {
             if (value < maxHeap.peek())
             {
@@ -56,22 +56,21 @@ public class FindMedianInDynamicInput
                 //除了minHeap和maxHeap都为0外，不存在其他情况
                 minHeap.offer(maxHeap.poll());
                 maxHeap.offer(value);
-            }else
+            } else
             {
                 minHeap.offer(value);
             }
         }
     }
 
-    //注意除以2后，可能会小数，所以返回值不能为int
-    public static double getMedian()
+    public static int getMedian()
     {
-        double res = 0;
+        int res;
 
         if (minHeap.size() == maxHeap.size())
         {
-            res = (double) (minHeap.peek() + maxHeap.peek())/2;
-        }else
+            res = (minHeap.peek() + maxHeap.peek()) / 2;
+        } else
         {
             res = maxHeap.peek();
         }
