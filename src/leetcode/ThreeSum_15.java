@@ -12,7 +12,8 @@ public class ThreeSum_15
     public static void main(String[] args)
     {
         int[] nums ={-1, 0, 1, 2, -1, -4};
-        List<List<Integer>> res = threeSum(nums);
+        int target = 0;
+        List<List<Integer>> res = threeSum(nums,target);
         for (int i = 0; i < res.size(); i++)
         {
             List<Integer> temp = res.get(i);
@@ -23,7 +24,7 @@ public class ThreeSum_15
             System.out.println();
         }
     }
-    public static List<List<Integer>> threeSum(int[] nums)
+    public static List<List<Integer>> threeSum(int[] nums,int target)
     {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         int len = nums.length;
@@ -31,7 +32,7 @@ public class ThreeSum_15
         Arrays.sort(nums);
         for (int i = 0; i < len; i++)
         {
-            int tempTarget = 0 - nums[i];
+            int tempTarget = target - nums[i];
             int head = i+1;
             int tail = len-1;
 
@@ -44,9 +45,15 @@ public class ThreeSum_15
                     storeUnit.add(nums[head]);
                     storeUnit.add(nums[tail]);
                     res.add(storeUnit);
+                    head++;
+                    tail--;
+                }else if (nums[head]+nums[tail] > tempTarget)
+                {
+                    tail--;
+                }else
+                {
+                    head++;
                 }
-                head++;
-                tail--;
             }
         }
 
