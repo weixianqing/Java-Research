@@ -60,7 +60,6 @@ public class FourSum_18
                 }
             }
         }
-
         return res;
     }
 }
