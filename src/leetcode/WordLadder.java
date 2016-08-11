@@ -20,7 +20,7 @@ public class WordLadder
         }
 
         Queue<String> bfsQueue = new LinkedList<>();
-        Set<String> strSet = new HashSet<String>();
+        Set<String> strSet = new HashSet<>();
         int len = 1;
         dict.add(end);
         dict.add(start);
