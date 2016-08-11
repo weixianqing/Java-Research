@@ -19,8 +19,8 @@ public class WordLadder
             return 1;
         }
 
-        Queue<String> bfsQueue = new LinkedList<String>();
-        Set<String> strSet = new HashSet<String>();
+        Queue<String> bfsQueue = new LinkedList<>();
+        Set<String> strSet = new HashSet<>();
         int len = 1;
         dict.add(end);
         dict.add(start);
@@ -73,6 +73,7 @@ public class WordLadder
 
         return resList;
     }
+
 
     private String replace(String word, int index, char c)
     {
