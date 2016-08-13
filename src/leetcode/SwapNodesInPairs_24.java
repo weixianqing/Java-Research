@@ -4,7 +4,7 @@ package leetcode;
  * Created by shelvin on 13/8/16 at 10:35.
  */
 
-public class SwapNodesInPairs
+public class SwapNodesInPairs_24
 {
     public static void main(String[] args)
     {
