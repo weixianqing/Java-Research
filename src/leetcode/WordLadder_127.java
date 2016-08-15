@@ -6,7 +6,7 @@ import java.util.*;
  * Created by shelvin on 11/8/16 at 20:59.
  */
 
-public class WordLadder
+public class WordLadder_127
 {
     public int minWordLadder(String start, String end, Set<String> dict)
     {

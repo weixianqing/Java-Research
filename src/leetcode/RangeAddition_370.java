@@ -70,6 +70,4 @@ public class RangeAddition_370
 
         return res;
     }
-
-
 }
