@@ -4,7 +4,7 @@ package leetcode;
  * Created by shelvin on 15/8/16 at 22:56.
  */
 
-public class ReversList
+public class ReverseList
 {
     public static void main(String[] args)
     {
