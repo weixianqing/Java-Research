@@ -11,8 +11,8 @@ public class RestoreIPAddresses_93
 
     public ArrayList<String> restoreIPAddress(String str)
     {
-        ArrayList<String> result = new ArrayList<String>();
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> result = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
 
         if (str.length() < 4 || str.length() > 12)
         {
@@ -33,7 +33,7 @@ public class RestoreIPAddresses_93
                 return;
             }
 
-            StringBuffer stringBuffer = new StringBuffer();
+            StringBuilder stringBuffer = new StringBuilder();
             for (String string : list)
             {
                 stringBuffer.append(string);
