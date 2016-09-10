@@ -8,7 +8,20 @@ import java.util.ArrayList;
 
 public class NQueens_51
 {
-    public void solveNQueens(ArrayList<ArrayList<String>> result, int[] dfsrow, int n, int row)
+    public ArrayList<ArrayList<String>> solveNQueens(int n)
+    {
+        ArrayList<ArrayList<String>> result = new ArrayList<>();
+        if (n <= 0)
+        {
+            return result;
+        }
+
+        int[] dfsrow = new int[n];
+        solveNQueensCore(result, dfsrow, n, 0);
+        return result;
+    }
+
+    public void solveNQueensCore(ArrayList<ArrayList<String>> result, int[] dfsrow, int n, int row)
     {
         if (row == n)
         {
@@ -22,7 +35,7 @@ public class NQueens_51
             if (isValid(dfsrow, row, i))
             {
                 dfsrow[row] = i;
-                solveNQueens(result, dfsrow, n, row + 1);
+                solveNQueensCore(result, dfsrow, n, row + 1);
                 //因为在row行上可能有多个解,当深度优先从row行的底层行返回到row行时,只是完成了
                 //位置[row,i]时,底层行可能的解,但是在row行上,位置[row,i+1]等也可能是row的
                 //上一行row-1的解,所以此时,在row行上,把dfsrow[row]置零,用于保存row的横向上可能的解.
