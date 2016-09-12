@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by shelvin on 12/9/16 at 11:24.
@@ -15,6 +16,7 @@ public class CombinationSum_53
         {
             return result;
         }
+        Arrays.sort(candidates);
         ArrayList<Integer> path = new ArrayList<>();
         combinationSumCore(candidates, target, result, 0, path);
         return result;
@@ -43,7 +45,7 @@ public class CombinationSum_53
             }
 
             path.add(candidates[i]);
-            combinationSumCore(candidates, target - i, result, i, path);
+            combinationSumCore(candidates, target - candidates[i], result, i, path);
             path.remove(path.size() - 1);
 
             pre = candidates[i];
