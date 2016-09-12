@@ -31,6 +31,11 @@ public class CombinationSum_53
             return;
         }
 
+        if (target < 0)
+        {
+            return;
+        }
+
         int pre = -1;
         for (int i = index; i < candidates.length; i++)
         {
