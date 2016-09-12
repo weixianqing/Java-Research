@@ -39,14 +39,14 @@ public class CombinationSum_53
         int pre = -1;
         for (int i = index; i < candidates.length; i++)
         {
-            if (target < candidates[i])
-            {
-                break;
-            }
-
             if (pre != -1 && pre == candidates[i])
             {
                 continue;
+            }
+
+            if (target < candidates[i])
+            {
+                break;
             }
 
             path.add(candidates[i]);
