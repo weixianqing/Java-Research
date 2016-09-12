@@ -1,12 +1,5 @@
 package com.shelvin.study.datastructure.res.listapp;
 
-/*
- * ִ�в���ɾ����������Ҫ�ر��ǵĵط���Ҫ�����ף���β�������Ƿ�Ϊ��
- * ����ʱ���������Ƿ����������������βʱ�Ƿ����������
- * ɾ��ʱ���������Ƿ����������������βʱ�Ƿ����������
- * ɾ��ʱ������ֻ��һ�����ݵ�ʱ��
- * ����ɾ��ʱ�����������Ƿ��ǿձ��ֱ���
- */
 
 public class LinkListApp 
 {
@@ -109,8 +102,6 @@ class Link
 		
 //		if(first==null)
 //			first=newlink;
-//���ϱ����䣬������ѭ��
-//��first=newlink�±߼���return�Ϳ����Ƴ���ѭ��
 		newlink.LNext=first;
 		first=newlink;
 	}

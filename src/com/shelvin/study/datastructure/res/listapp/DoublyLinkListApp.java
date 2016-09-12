@@ -108,7 +108,7 @@ class DoublyLinkList
 		}
 		else
 		{
-			first.previous=dl;//�þ������else��ߣ���if�Ǵ˼��ˣ����Ƿ���if���
+			first.previous = dl;
 		}
 		dl.next=first;
 		first=dl;
@@ -126,7 +126,7 @@ class DoublyLinkList
 		else
 		{
 			last.next=dl;
-			dl.previous=last;//��������else�У���if���Ǵ˼��ˣ���ϸ���
+			dl.previous = last;
 		}
 			
 		last=dl;

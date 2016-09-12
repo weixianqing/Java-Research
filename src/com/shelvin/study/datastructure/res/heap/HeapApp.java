@@ -1,7 +1,5 @@
 package com.shelvin.study.datastructure.res.heap;
 
-//�ڶ��У���ǰ����Ĵ�СcurrentSize��һ���ǳ���Ҫ�Ĳ�����Ҳֻ��ͨ���������
-//�����ҵ���ʾ�ѵ���ȫ�����������һ���ڵ�
 
 public class HeapApp 
 {
@@ -53,8 +51,8 @@ class Heap
 			return false;
 		}
 		Node node=new Node(data);
-		heapArray[currentSize]=node;//��Ҫ���Ǹ�heapArray[currentSize]��ֵ
-		trickleUp(currentSize++);//������++
+		heapArray[currentSize] = node;
+		trickleUp(currentSize++);
 		return true;
 	}
 	
@@ -86,8 +84,8 @@ class Heap
 	{
 		Node top=heapArray[index];
 		int largerChild;
-		
-		while(index>=0 && index<(currentSize/2))//************************index<(currentSize/2)[�ж�������һ���ӽڵ�]��û��Ū����***************************8
+
+		while (index >= 0 && index < (currentSize / 2))
 		{
 			int leftChild=2*index+1;
 			int rightChild=leftChild+1;
@@ -100,8 +98,8 @@ class Heap
 			{
 				largerChild=leftChild;
 			}
-			
-			if(top.get()>=heapArray[largerChild].get())//��Ҫ�������۸��ڵ�������ӽڵ㶼������
+
+			if (top.get() >= heapArray[largerChild].get())
 			{
 				break;
 			}

@@ -80,8 +80,7 @@ class FirstLastLinkList
 //			fllink.next=firstlink;
 //			firstlink=fllink;
 //		}
-//����д�����������в���ȷ����Ϊ�±�����
-		
+
 		if(firstlink==null)
 		{
 			lastlink=fllink;
@@ -114,7 +113,7 @@ class FirstLastLinkList
 			return null;
 		
 		if(firstlink.next==null)
-			lastlink=null;//û�п���ֻ��һ��Ԫ�ص����
+			lastlink = null;
 		
 		temp=firstlink;
 		firstlink=firstlink.next;
