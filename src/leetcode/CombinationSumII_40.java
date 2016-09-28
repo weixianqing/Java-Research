@@ -6,10 +6,13 @@ import java.util.Arrays;
 /**
  * Created by Shelvin Zhou on 2016/9/12 at 13:37.
  */
-public class CombinationSumII_40 {
-    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+public class CombinationSumII_40
+{
+    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target)
+    {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
-        if (candidates == null) {
+        if (candidates == null)
+        {
             return result;
         }
         Arrays.sort(candidates);
@@ -19,22 +22,28 @@ public class CombinationSumII_40 {
     }
 
     public void combinationSumCore(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> path,
-                                   int[] candidates, int index, int target) {
-        if (target == 0) {
+                                   int[] candidates, int index, int target)
+    {
+        if (target == 0)
+        {
             result.add(new ArrayList<Integer>(path));
             return;
         }
 
-        if (target < 0) {
+        if (target < 0)
+        {
             return;
         }
 
         int pre = -1;
-        for (int i = index; i < candidates.length; i++) {
-            if (pre != -1 && pre == candidates[i]) {
+        for (int i = index; i < candidates.length; i++)
+        {
+            if (pre != -1 && pre == candidates[i])
+            {
                 continue;
             }
-            if (target < candidates[i]) {
+            if (target < candidates[i])
+            {
                 break;
             }
             path.add(candidates[i]);
