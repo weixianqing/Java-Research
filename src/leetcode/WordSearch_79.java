@@ -27,7 +27,7 @@ public class WordSearch_79 {
     }
 
     public boolean find(char[][] board, int i, int j, String word, int index) {
-        if (i < 0 || i > board.length || j < 0 || j > board.length || board[i][j] != word.charAt(index)) {
+        if (i < 0 || i > board.length || j < 0 || j > board[0].length || board[i][j] != word.charAt(index)) {
             return false;
         }
 
