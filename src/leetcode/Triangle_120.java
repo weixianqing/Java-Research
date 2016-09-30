@@ -1,6 +1,5 @@
 package leetcode;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * Created by Shelvin Zhou on 2016/9/30 at 18:46.
