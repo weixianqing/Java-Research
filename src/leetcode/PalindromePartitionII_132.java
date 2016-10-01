@@ -70,7 +70,7 @@ public class PalindromePartitionII_132
         boolean[][] isPalindrome = new boolean[len][len];
         int[] f = new int[len];
 
-        for (int i = 0; i < len; i++)
+        for (int i = 0; i <= len; i++)
         {
             f[i] = len - 1 - i;
         }
