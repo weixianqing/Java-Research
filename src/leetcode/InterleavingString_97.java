@@ -77,9 +77,11 @@ public class InterleavingString_97
             f[i] = s2.charAt(i - 1) == s3.charAt(i - 1) && f[i - 1];
         }
 
+
         for (int i = 1; i <= len1; i++)
         {
             f[0] = s1.charAt(i - 1) == s3.charAt(i - 1) && f[0];
+
             for (int j = 1; j <= len2; j++)
             {
                 f[j] = ((s1.charAt(i - 1) == s3.charAt(i + j - 1) && f[j]) || (s2.charAt(j - 1) == s3.charAt(i + j - 1) && f[j - 1]));
