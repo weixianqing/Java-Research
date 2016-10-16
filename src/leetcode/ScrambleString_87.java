@@ -32,7 +32,7 @@ public class ScrambleString_87
             String s23 = s2.substring(0, n - i);
             String s24 = s2.substring(n - i, n);
 
-            if (isScramble(s11, s21) && isValid(s12, s22))
+            if (isScramble(s11, s21) && isScramble(s12, s22))
             {
                 return true;
             }
