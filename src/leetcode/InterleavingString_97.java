@@ -67,7 +67,7 @@ public class InterleavingString_97
         }
 
         boolean[] f = new boolean[len2 + 1];
-        for (int i = 1; i <= len2; i++)
+        for (int i = 0; i <= len2; i++)
         {
             f[i] = true;
         }
