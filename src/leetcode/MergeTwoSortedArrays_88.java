@@ -4,7 +4,7 @@ package leetcode;
  * Created by shelvin on 6/1/17 at 17:36.
  */
 
-public class MergeTwoSortedArrays
+public class MergeTwoSortedArrays_88
 {
     public void merge(int[] nums1, int m, int[] nums2, int n)
     {
