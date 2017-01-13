@@ -10,16 +10,18 @@ import java.util.List;
 
 public class SubsetsII_90
 {
-    public List<List<Integer>> subsetsWithDup(int[] nums)
+    public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] nums)
     {
-        List<List<Integer>> res = new ArrayList<>();
-        List<Integer> subset = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        ArrayList<Integer> subset = new ArrayList<>();
 
         if (nums.length == 0 || nums == null)
         {
             return res;
         }
         Arrays.sort(nums);
+
+        helper(nums, res, subset, 0);
 
         return res;
     }
