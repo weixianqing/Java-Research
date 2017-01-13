@@ -2,7 +2,6 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by shelvin on 10/1/17 at 11:44.
