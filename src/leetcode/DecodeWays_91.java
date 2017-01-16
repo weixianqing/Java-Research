@@ -6,7 +6,10 @@ package leetcode;
 
 public class DecodeWays_91
 {
-    public int numOfDecodeWays(String digit)
+    /*
+    设置动态数组dp[n+1]。dp[i]表示从1~i的decode ways的个数。
+     */
+    public int numOfDecodeWaysdp(String digit)
     {
         if (digit == null || digit.length() == 0)
         {
@@ -48,5 +51,30 @@ public class DecodeWays_91
         int num = Integer.parseInt(s);
 
         return num >= 1 && num <= 26;
+    }
+
+
+    public int numofDecodeWays(String nums)
+    {
+        int len = nums.length();
+        int[] dp = new int[len + 1];
+        dp[0] = 1;
+        dp[1] = nums.charAt(0) != '0' ? 1 : 0;
+
+        for (int i = 2; i <= len; i++)
+        {
+            if (nums.charAt(i - 1) != '0')
+            {
+                dp[i] = dp[i - 1] + 1;
+            }
+            int twoDigits = (nums.charAt(i - 2) - '0') * 10 + (nums.charAt(i - 1));
+
+            if (twoDigits >= 10 && twoDigits <= 26)
+            {
+                dp[i] += 1;
+            }
+        }
+
+        return dp[len];
     }
 }
