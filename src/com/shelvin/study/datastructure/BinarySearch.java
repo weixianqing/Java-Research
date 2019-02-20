@@ -13,6 +13,7 @@ public class BinarySearch
         int[] src = new int[]{1, 3, 5, 7, 8, 9};
         System.out.println(binarySearch(src, 3));
         System.out.println(binarySearch(src, 3, 0, src.length - 1));
+        System.out.println("bug03 branch test");
     }
 
     /**
