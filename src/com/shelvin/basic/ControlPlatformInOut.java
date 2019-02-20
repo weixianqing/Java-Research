@@ -14,6 +14,7 @@ public class ControlPlatformInOut
     {
         System.out.println("请输入一维数组，每个元素以单个空格间隔，最后一个元素不要添加空格，直接以回车键结束输入");
         System.out.println("bug01 branch test");
+        System.out.println("888888888");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input = null;
         try
