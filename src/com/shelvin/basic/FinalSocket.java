@@ -5,7 +5,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Created by shelvin on 2016/2/25 15:47.
+ * @author shelvin
+ * @date 2016/2/25 15:47
  */
 public class FinalSocket
 {
@@ -21,6 +22,7 @@ public class FinalSocket
     public static void main(String[] args) throws IOException
     {
         System.out.println("server starting...");
+        System.out.println("bug02 branch test");
         FinalSocket finalSocket = new FinalSocket();
         finalSocket.init();
     }
