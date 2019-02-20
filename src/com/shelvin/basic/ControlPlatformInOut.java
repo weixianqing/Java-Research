@@ -17,6 +17,7 @@ public class ControlPlatformInOut
         System.out.println("888888888");
         System.out.println("bug04 branch test");
         System.out.println("remote branch test");
+        System.out.println("dev branch");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input = null;
         try
